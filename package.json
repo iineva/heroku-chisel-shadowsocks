@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "start": "./shadowsocks-server -p $SSPORT -k $PASSWORD -m $METHOD & ./chisel server --port $PORT"
+  }
+}
