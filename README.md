@@ -16,25 +16,16 @@ shadowsocks server over chisel
 * Fork this repository
 * Login to heroku --> Create new app
 * Deploy --> Deployment method --> Github --> choice `heroku-chisel-shadowsocks `
-* Settings --> Config Variables --> set `SSPORT` `PASSWORD` and `METHOD` for shadowsocks server
-* Done!
+* Settings --> Config Variables --> set `PASSWORD` and `METHOD` for shadowsocks server
+* Open `https://your-herokuapp-identifier.herokuapp.com` in browser, if you see `Not found`, Done!
 
-# Setup client
-
-### open chisel client
+# Setup chisel client
 
 ```shell
-chisel client https://your-herokuapp-identifier.herokuapp.com $LOCALPORT:$SSPORT
+chisel client https://your-herokuapp-identifier.herokuapp.com $LOCALPORT:8888
 ```
-### config shadowsocks client
 
-* host: localhost
-* port: $LOCALPORT
-* method: $METHOD
-* password: $PASSWORD
-
-
-# Setup client on docker (option)
+# Setup chisel client on docker (option)
 
 * docker-compose.yml
 
@@ -46,6 +37,13 @@ services:
     image: jpillora/chisel
     restart: always
     ports:
-      - "$LOCALPORT:$LOCALPORT"
-    entrypoint: "chisel client https://your-herokuapp-identifier.herokuapp.com $LOCALPORT:$SSPORT"
+      - "$LOCALPORT:8888"
+    entrypoint: "chisel client https://<your-herokuapp-identifier>.herokuapp.com 8888:8888"
 ```
+
+# Config shadowsocks client
+
+* host: localhost (or your cloud host)
+* port: $LOCALPORT (or your cloud host port)
+* method: $METHOD
+* password: $PASSWORD
