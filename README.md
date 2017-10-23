@@ -17,12 +17,12 @@ shadowsocks server over chisel
 * Login to heroku --> Create new app
 * Deploy --> Deployment method --> Github --> choice `heroku-chisel-shadowsocks `
 * Settings --> Config Variables --> set `PASSWORD` and `METHOD` for shadowsocks server
-* Open `https://your-herokuapp-identifier.herokuapp.com` in browser, if you see `Not found`, Done!
+* Open `https://<your-herokuapp-identifier>.herokuapp.com` in browser, if you see `Not found`, Done!
 
 # Setup chisel client
 
 ```shell
-chisel client https://your-herokuapp-identifier.herokuapp.com $LOCALPORT:8888
+chisel client https://<your-herokuapp-identifier>.herokuapp.com $LOCALPORT:8888
 ```
 
 # Setup chisel client on docker (option)
