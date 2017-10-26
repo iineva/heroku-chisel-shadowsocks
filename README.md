@@ -15,8 +15,8 @@ shadowsocks server over chisel
 
 * Fork this repository
 * Login to heroku --> Create new app
-* Deploy --> Deployment method --> Github --> choice `heroku-chisel-shadowsocks `
-* Settings --> Config Variables --> set `PASSWORD` and `METHOD` for shadowsocks server
+* `Deploy` --> `Deployment method` --> `Github` --> choice `heroku-chisel-shadowsocks `
+* `Deploy` --> `Manual deploy` --> Select `master` branch --> `Depoly Branch`
 * Open `https://<your-herokuapp-identifier>.herokuapp.com` in browser, if you see `Not found`, Done!
 
 # Setup chisel client
@@ -41,9 +41,20 @@ services:
     entrypoint: "chisel client https://<your-herokuapp-identifier>.herokuapp.com 8888:8888"
 ```
 
+# Change shadowsocks `Server port` `Method` `Password` (option)
+
+Key | Default | Info
+---- | ---- | ----
+SSPORT | 8888 | shadowsocks server port behind heroku
+METHOD | aes-256-cfb | encryption method
+PASSWORD | steven | password
+
+* Login to heroku --> Settings --> Config Variables --> set `SSPORT` `METHOD` `PASSWORD`
+* `Deploy` --> `Manual deploy` --> Select `master` branch --> `Depoly Branch`
+
 # Config shadowsocks client
 
-* host: localhost (or your cloud host)
-* port: $LOCALPORT (or your cloud host port)
-* method: $METHOD
-* password: $PASSWORD
+* Host: `localhost` (or your cloud host)
+* Port: `$LOCALPORT` (or your cloud host port)
+* Method: `aes-256-cfb`
+* Password: `steven`
