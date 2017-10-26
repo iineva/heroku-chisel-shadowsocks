@@ -38,7 +38,7 @@ services:
     restart: always
     ports:
       - "$LOCALPORT:8888"
-    entrypoint: "chisel client https://<your-herokuapp-identifier>.herokuapp.com 8888:8888"
+    entrypoint: "chisel client --keepalive=2m https://<your-herokuapp-identifier>.herokuapp.com 8888:8888"
 ```
 
 # Change shadowsocks `Server port` `Method` `Password` (option)
