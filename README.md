@@ -43,10 +43,12 @@ services:
 
 # Change shadowsocks `Server port` `Method` `Password` (option)
 
+* Available methods: AEAD_AES_128_GCM AEAD_AES_192_GCM AEAD_AES_256_GCM AEAD_CHACHA20_POLY1305(CHACHA20-IETF-POLY1305) AES-128-CFB AES-128-CTR AES-192-CFB AES-192-CTR AES-256-CFB AES-256-CTR CHACHA20-IETF XCHACHA20
+
 Key | Default | Info
 ---- | ---- | ----
 SSPORT | 8888 | shadowsocks server port behind heroku
-METHOD | aes-256-cfb | encryption method
+METHOD | CHACHA20-IETF-POLY1305 | encryption method
 PASSWORD | steven | password
 
 * Login to heroku --> Settings --> Config Variables --> set `SSPORT` `METHOD` `PASSWORD`
@@ -56,5 +58,5 @@ PASSWORD | steven | password
 
 * Host: `localhost` (or your cloud host)
 * Port: `$LOCALPORT` (or your cloud host port)
-* Method: `aes-256-cfb`
+* Method: `CHACHA20-IETF-POLY1305`
 * Password: `steven`
