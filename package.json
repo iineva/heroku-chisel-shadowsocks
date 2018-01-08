@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "start": "./go-shadowsocks2 -s ss://${METHOD:-CHACHA20-IETF-POLY1305}:${PASSWORD:-steven}@:${SSPORT:-8888} & ./chisel server --port $PORT"
+    "start": "./go-shadowsocks2 -s ss://${METHOD:-CHACHA20-IETF-POLY1305}:${PASSWORD:-steven}@:${SSPORT:-8888} & ./go-shadowsocks2 -c ss://${METHOD:-CHACHA20-IETF-POLY1305}:${PASSWORD:-steven}@:${SSPORT:-8888} -verbose -socks :${SOCKSPORT:-8889} & ./chisel server --port $PORT"
   }
 }
